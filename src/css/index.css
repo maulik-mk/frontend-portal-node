@@ -1,0 +1,100 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource-variable/inter';
+@import '@fontsource/roboto';
+
+/* Material Theme Variables */
+@import './light.css' layer(base);
+@import './light-mc.css' layer(base);
+@import './light-hc.css' layer(base);
+@import './dark.css' layer(base);
+@import './dark-mc.css' layer(base);
+@import './dark-hc.css' layer(base);
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* ================= FONT ================= */
+  --font-sans: 'Roboto', 'Outfit', 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* ================= MATERIAL DESIGN 3 / SHADCN UI MAPPINGS ================= */
+  /* The user requires strict UI definitions for Borders, Backgrounds, Popovers, Cards, etc. */
+
+  /* Base Backgrounds */
+  --color-background: var(--md-sys-color-background);
+  --color-foreground: var(--md-sys-color-on-background);
+  
+  /* Cards (Surfaces) */
+  --color-card: var(--md-sys-color-surface);
+  --color-card-foreground: var(--md-sys-color-on-surface);
+  
+  /* Popovers / Dropdowns */
+  --color-popover: var(--md-sys-color-surface-container);
+  --color-popover-foreground: var(--md-sys-color-on-surface);
+
+  /* Primary Action */
+  --color-primary: var(--md-sys-color-secondary);
+  --color-primary-foreground: var(--md-sys-color-on-secondary);
+  
+  /* Secondary Action */
+  --color-secondary: var(--md-sys-color-tertiary);
+  --color-secondary-foreground: var(--md-sys-color-on-tertiary);
+  
+  /* Neutral Accent -> Grey (MD3 Primary) */
+  --color-accent: var(--md-sys-color-surface-variant);
+  --color-accent-foreground: var(--md-sys-color-on-surface-variant);
+
+  /* Destructive Actions */
+  --color-destructive: var(--md-sys-color-error);
+  --color-destructive-foreground: var(--md-sys-color-on-error);
+
+  /* Muted Text and Backgrounds */
+  --color-muted: var(--md-sys-color-surface-container-high);
+  --color-muted-foreground: var(--md-sys-color-on-surface-variant);
+
+  /* Borders and Inputs */
+  --color-border: var(--md-sys-color-outline-variant);
+  --color-input: var(--md-sys-color-outline);
+  
+  /* Focus Rings */
+  --color-ring: var(--md-sys-color-secondary); 
+
+  /* Extra Custom MD3 Surfaces for raw utility usage */
+  --color-surface: var(--md-sys-color-surface);
+  --color-surface-foreground: var(--md-sys-color-on-surface);
+  --color-surface-variant: var(--md-sys-color-surface-variant);
+  --color-surface-variant-foreground: var(--md-sys-color-on-surface-variant);
+  --color-surface-container-lowest: var(--md-sys-color-surface-container-lowest);
+  --color-surface-container-low: var(--md-sys-color-surface-container-low);
+  --color-surface-container: var(--md-sys-color-surface-container);
+  --color-surface-container-high: var(--md-sys-color-surface-container-high);
+  --color-surface-container-highest: var(--md-sys-color-surface-container-highest);
+
+  /* Status Colors */
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #ffffff;
+  --color-info: #8b5cf6;
+  --color-info-foreground: #ffffff;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-3: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
